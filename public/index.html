@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minha Biblioteca</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>📚 Minha Biblioteca</h1>
+
+    <section class="card">
+      <h2 id="form-titulo">Adicionar livro</h2>
+      <form id="form-livro">
+        <input type="hidden" id="id">
+        <label>Título <input id="titulo" required></label>
+        <label>Autor <input id="autor" required></label>
+        <label>Ano <input id="ano" type="number" min="0" max="2100"></label>
+        <label>Status
+          <select id="status">
+            <option value="quero ler">Quero ler</option>
+            <option value="lendo">Lendo</option>
+            <option value="lido">Lido</option>
+          </select>
+        </label>
+        <div class="acoes">
+          <button type="submit" id="btn-salvar">Salvar</button>
+          <button type="button" id="btn-cancelar" class="secundario" hidden>Cancelar</button>
+        </div>
+      </form>
+      <p id="mensagem" role="alert"></p>
+    </section>
+
+    <section class="card">
+      <div class="topo-lista">
+        <h2>Meus livros</h2>
+        <select id="filtro">
+          <option value="">Todos</option>
+          <option value="quero ler">Quero ler</option>
+          <option value="lendo">Lendo</option>
+          <option value="lido">Lido</option>
+        </select>
+      </div>
+      <table>
+        <thead>
+          <tr><th>Título</th><th>Autor</th><th>Ano</th><th>Status</th><th></th></tr>
+        </thead>
+        <tbody id="lista"></tbody>
+      </table>
+      <p id="vazio" hidden>Nenhum livro encontrado.</p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
